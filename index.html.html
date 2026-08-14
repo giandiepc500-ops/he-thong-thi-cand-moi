@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="theme-color" content="#a80000">
+
+  <title>HỆ THỐNG HỌC TẬP VÀ KIỂM TRA ĐIỀU LỆNH CAND</title>
+
+  <!-- Facebook / Messenger preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="HỆ THỐNG HỌC TẬP VÀ KIỂM TRA ĐIỀU LỆNH CAND">
+  <meta property="og:description"
+        content="Công an tỉnh Hà Tĩnh - Phòng An ninh chính trị nội bộ">
+  <meta property="og:url"
+        content="https://USERNAME.github.io/he-thong-thi-cand/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(180deg, #f2f4f7 0%, #ffffff 100%);
+      color: #222;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 620px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,.12);
+      border: 1px solid #e4e7eb;
+    }
+
+    .header {
+      position: relative;
+      padding: 30px 24px 28px;
+      text-align: center;
+      color: #fff;
+      background:
+        linear-gradient(135deg, #8f0000 0%, #c40000 55%, #8f0000 100%);
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      bottom: 12px;
+      height: 2px;
+      background: rgba(255,255,255,.75);
+    }
+
+    .province {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: .4px;
+      margin-bottom: 8px;
+    }
+
+    .department {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+      opacity: .98;
+    }
+
+    .body {
+      padding: 28px 24px 30px;
+      text-align: center;
+    }
+
+    .system-title {
+      font-size: 22px;
+      line-height: 1.4;
+      font-weight: 900;
+      color: #a40000;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0 auto 22px;
+      max-width: 500px;
+    }
+
+    .notice {
+      display: none;
+      margin: 0 0 18px;
+      padding: 13px 14px;
+      border-radius: 10px;
+      background: #fff8e1;
+      border: 1px solid #f0c36d;
+      color: #6d4c00;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      width: 100%;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 11px;
+      background: #b00000;
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 5px 14px rgba(176,0,0,.25);
+      transition: transform .12s ease, background .12s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:active {
+      transform: scale(.98);
+      background: #8f0000;
+    }
+
+    .secondary {
+      margin-top: 13px;
+      background: #fff;
+      color: #a00000;
+      border: 1px solid #c9cdd2;
+      box-shadow: none;
+      font-size: 15px;
+    }
+
+    .url-box {
+      display: none;
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    .url-box label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+    }
+
+    .url-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .url-row input {
+      min-width: 0;
+      flex: 1;
+      padding: 11px;
+      border: 1px solid #cfd4da;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #444;
+      background: #f8f9fa;
+    }
+
+    .copy-button {
+      flex: 0 0 auto;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 8px;
+      background: #555;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .footer {
+      padding: 0 24px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .header {
+        padding: 25px 18px 25px;
+      }
+
+      .body {
+        padding: 24px 18px 25px;
+      }
+
+      .system-title {
+        font-size: 20px;
+      }
+
+      .province {
+        font-size: 16px;
+      }
+
+      .department {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+    <section class="card">
+
+      <header class="header">
+        <div class="province">CÔNG AN TỈNH HÀ TĨNH</div>
+        <div class="department">
+          PHÒNG AN NINH CHÍNH TRỊ NỘI BỘ
+        </div>
+      </header>
+
+      <div class="body">
+
+        <div class="system-title">
+          HỆ THỐNG HỌC TẬP VÀ<br>
+          KIỂM TRA ĐIỀU LỆNH CAND
+        </div>
+
+        <p class="description">
+          Kính mời cán bộ, chiến sĩ truy cập hệ thống để
+          học tập và thực hiện bài kiểm tra.
+        </p>
+
+        <div id="facebookNotice" class="notice">
+          <strong>Bạn đang mở từ Facebook/Messenger.</strong><br>
+          Nếu nút bên dưới không mở được hệ thống, hãy chọn
+          <strong>Mở trong trình duyệt</strong> từ menu của Facebook
+          hoặc Messenger rồi thử lại.
+        </div>
+
+        <!--
+          QUAN TRỌNG:
+          Đây là URL Web App hiện tại của bạn.
+          Không thay đổi URL này nếu chưa tạo deployment mới.
+        -->
+        <a
+          id="openExam"
+          class="button"
+          href="https://script.google.com/macros/s/AKfycbzCWeOqKV0LiaEj31qmjZVKnYCYqCrwQb7KBjFehdT_w0_jNMTeb-ipruO2su_pJAGs/exec"
+          target="_blank"
+          rel="noopener noreferrer"
+          referrerpolicy="no-referrer"
+        >
+          MỞ HỆ THỐNG HỌC TẬP VÀ KIỂM TRA
+        </a>
+
+        <button
+          id="browserButton"
+          class="button secondary"
+          type="button"
+          style="display:none;"
+        >
+          MỞ TRONG TRÌNH DUYỆT
+        </button>
+
+        <div id="urlBox" class="url-box">
+          <label>Địa chỉ hệ thống:</label>
+
+          <div class="url-row">
+            <input
+              id="examUrl"
+              type="text"
+              readonly
+              value="https://script.google.com/macros/s/AKfycbzCWeOqKV0LiaEj31qmjZVKnYCYqCrwQb7KBjFehdT_w0_jNMTeb-ipruO2su_pJAGs/exec"
+            >
+
+            <button
+              id="copyButton"
+              class="copy-button"
+              type="button"
+            >
+              Sao chép
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        HỆ THỐNG HỌC TẬP VÀ KIỂM TRA ĐIỀU LỆNH CAND
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    (function () {
+
+      const examUrl =
+        "https://script.google.com/macros/s/AKfycbzCWeOqKV0LiaEj31qmjZVKnYCYqCrwQb7KBjFehdT_w0_jNMTeb-ipruO2su_pJAGs/exec";
+
+      const notice =
+        document.getElementById("facebookNotice");
+
+      const browserButton =
+        document.getElementById("browserButton");
+
+      const urlBox =
+        document.getElementById("urlBox");
+
+      const copyButton =
+        document.getElementById("copyButton");
+
+      const examUrlInput =
+        document.getElementById("examUrl");
+
+      /*
+       * Nhận diện một số môi trường Facebook/Messenger.
+       * Đây chỉ là nhận diện để hướng dẫn người dùng,
+       * không cố gắng "ép" Facebook mở trình duyệt ngoài.
+       */
+      const ua =
+        navigator.userAgent || navigator.vendor || "";
+
+      const isFacebook =
+        /FBAN|FBAV|FBIOS|FB4A|FB_IAB|FBAN\/|Messenger/i.test(ua);
+
+      if (isFacebook) {
+        notice.style.display = "block";
+        browserButton.style.display = "flex";
+        urlBox.style.display = "block";
+      }
+
+      /*
+       * Nút "MỞ TRONG TRÌNH DUYỆT".
+       *
+       * Không có JavaScript nào bảo đảm 100% ép Facebook
+       * chuyển sang Chrome/Safari trên mọi điện thoại.
+       * Vì vậy nút này thực hiện cách an toàn nhất:
+       * mở URL bằng một cửa sổ/tab mới.
+       */
+      browserButton.addEventListener("click", function () {
+
+        const newWindow =
+          window.open(
+            examUrl,
+            "_blank",
+            "noopener,noreferrer"
+          );
+
+        /*
+         * Một số WebView chặn window.open.
+         * Khi đó chuyển hướng trực tiếp để người dùng
+         * vẫn có thể tiếp tục.
+         */
+        if (!newWindow) {
+          window.location.href = examUrl;
+        }
+
+      });
+
+      /*
+       * Sao chép URL.
+       */
+      copyButton.addEventListener("click", async function () {
+
+        try {
+
+          await navigator.clipboard.writeText(examUrl);
+
+          copyButton.textContent = "Đã sao chép";
+
+          setTimeout(function () {
+            copyButton.textContent = "Sao chép";
+          }, 1600);
+
+        } catch (error) {
+
+          examUrlInput.focus();
+          examUrlInput.select();
+
+          try {
+            document.execCommand("copy");
+            copyButton.textContent = "Đã sao chép";
+          } catch (e) {
+            copyButton.textContent = "Đã chọn";
+          }
+
+          setTimeout(function () {
+            copyButton.textContent = "Sao chép";
+          }, 1600);
+        }
+
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
